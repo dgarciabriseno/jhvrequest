@@ -1,5 +1,5 @@
 import { JhvRequestBuilder } from "./jhv_request_builder";
 import { JhvRequest } from "./jhv_request";
-import { IsJhvRunning } from "./ping.ts";
+import { IsJhvRunning } from "./ping";
 
-export { JhvRequest, JhvRequestBuilder };
+export { JhvRequest, JhvRequestBuilder, IsJhvRunning };

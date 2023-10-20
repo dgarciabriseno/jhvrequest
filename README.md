@@ -15,27 +15,43 @@ npm i jhvrequest
 
 Import and make requests.
 
-```
+```javascript
 import { JhvRequestBuilder } from "jhvrequest";
 
 // Load AIA 304 between 2023-01-1 and 2023-01-02 every hour.
 let requestBuilder = new JhvRequestBuilder();
-requestBuilder.SetTimeRange('2023-01-01 00:00:00', '2023-01-02 00:00:00')
-    .SetCadence(3600)
-    .AddSource("SDO", "AIA 304")
-    .Build().Send();
+requestBuilder
+  .SetTimeRange("2023-01-01 00:00:00", "2023-01-02 00:00:00")
+  .SetCadence(3600)
+  .AddSource("SDO", "AIA 304")
+  .Build()
+  .Send();
 ```
 
 You can add multiple sources to the request:
 
-```
+```javascript
 let requestBuilder = new JhvRequestBuilder();
 requestBuilder.SetTimeRange('2023-01-01 00:00:00', '2023-01-02 00:00:00')
-    .SetCadence(3600)
+    .SetCadence(3600)e
     .AddSource("SDO", "AIA 304")
     .AddSource("SOHO", "LASCO C2")
     .AddSource("SOHO", "LASCO C3")
     .Build().Send();
+```
+
+You can check if JHelioviewer is alive before making any requests
+
+```javascript
+import { IsJhvRunning } from "jhvrequest";
+
+// IsJhvRunning returns true/false
+let isJhvRunning = await IsJhvRunning();
+if (isJhvRunning) {
+  // Send request
+} else {
+  // Jhv is not running
+}
 ```
 
 ## Nodejs vs Browser environments
@@ -47,6 +63,16 @@ and `xmldom` package by adding `XMLHttpRequest` to the the `global` variable
 and hooking the `xmldom.DOMParser` into `XMLHttpRequest.prototype.responseXML`.
 
 See `test/jhvrequest.test.ts` as an example.
+
+## IsJhvRunning
+
+async function checks if JHelioviewer is running and returns a boolean.
+
+```javascript
+import { IsJhvRunning } from "jhvrequest";
+// result is a true/false
+let result = await IsJhvRunning();
+```
 
 ## JhvRequestBuilder
 
