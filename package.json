@@ -1,10 +1,10 @@
 {
   "dependencies": {
-    "sampjs": "^1.0.2"
+    "sampjs": "^1.0.3"
   },
   "name": "jhvrequest",
   "description": "jhvrequest is a javascript package for sending SAMP requests to [JHelioviewer](https://www.jhelioviewer.org/)",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
