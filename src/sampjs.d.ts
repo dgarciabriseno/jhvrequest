@@ -1,1 +1,1 @@
-declare module 'sampjs';
+declare module "sampjs";
