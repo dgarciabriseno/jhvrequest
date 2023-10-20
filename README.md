@@ -37,6 +37,16 @@ requestBuilder.SetTimeRange(new Date('2023-01-01'), new Date('2023-01-02'))
     .Build().Send();
 ```
 
+## Nodejs vs Browser environments
+
+The dependency `sampjs` currently only supports a browser environment because it
+depends on xmlhttprequest and parsing xml via the DOM.
+But you can get this to work in a nodejs environment with the `xmlhttprequest`
+and `xmldom` package by adding `XMLHttpRequest` to the the `global` variable
+and hooking the `xmldom.DOMParser` into `XMLHttpRequest.prototype.responseXML`.
+
+See `test/jhvrequest.test.ts` as an example.
+
 ## JhvRequestBuilder
 
 | Method                          | Description                                                                              |
