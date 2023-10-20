@@ -4,7 +4,7 @@
   },
   "name": "jhvrequest",
   "description": "jhvrequest is a javascript package for sending SAMP requests to [JHelioviewer](https://www.jhelioviewer.org/)",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
