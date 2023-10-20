@@ -1,19 +1,6 @@
 import { describe, it } from "@jest/globals";
 import { JhvRequest, JhvRequestBuilder } from "../src/index";
-import { DOMParser } from "xmldom";
-import { XMLHttpRequest } from "xmlhttprequest";
-
-global.XMLHttpRequest = XMLHttpRequest;
-
-// Sampjs doesn't support nodejs, this is a somewhat hacky way to make it work
-// requires the xmlhttprequest and xmldom packages.
-// Override responseXML with the xmldom object which sampjs expects so that it can parse the response.
-Object.defineProperty(XMLHttpRequest.prototype, "responseXML", {
-  get: function () {
-    return new DOMParser().parseFromString(this.responseText);
-  },
-  set: function () {},
-});
+import "./nodejs_samp_patch";
 
 describe("Jhv Request", () => {
   // Using "failing" here because I want the test to always run in local environment
