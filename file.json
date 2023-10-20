@@ -1,1 +1,18 @@
-{"org.helioviewer.jhv.request.image":[{"observatory":"SDO","dataset":"AIA 304","startTime":"2023-01-01 00:00:00","endTime":"2023-01-02 00:00:00","cadence":3600},{"observatory":"SDO","dataset":"AIA 94","startTime":"2023-01-01 00:00:00","endTime":"2023-01-02 00:00:00","cadence":3600}]}
+{
+  "org.helioviewer.jhv.request.image": [
+    {
+      "observatory": "SDO",
+      "dataset": "AIA 304",
+      "startTime": "2023-01-01 00:00:00",
+      "endTime": "2023-01-02 00:00:00",
+      "cadence": 3600
+    },
+    {
+      "observatory": "SDO",
+      "dataset": "AIA 94",
+      "startTime": "2023-01-01 00:00:00",
+      "endTime": "2023-01-02 00:00:00",
+      "cadence": 3600
+    }
+  ]
+}

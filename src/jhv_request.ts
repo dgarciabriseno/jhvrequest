@@ -25,7 +25,9 @@ class JhvRequest {
 
   async Send() {
     console.log(this.json);
-    this.message = new samp.Message("jhv.load.request", { value: JSON.stringify(this.json) });
+    this.message = new samp.Message("jhv.load.request", {
+      value: JSON.stringify(this.json),
+    });
 
     let onRegister = (conn: any) => {
       this.connector.setConnection(conn);

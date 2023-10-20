@@ -3,7 +3,7 @@ import { JhvRequest } from "./jhv_request";
 interface Datasource {
   observatory: string;
   dataset: string;
-  server: string
+  server: string;
 }
 
 interface DateRange {
@@ -51,11 +51,15 @@ class JhvRequestBuilder {
    * @param dataset Dataset to request ("AIA 304", "LASCO C2", etc)
    * @param server Optional server to request data from (GSFC, IAS, ROB, etc)
    */
-  AddSource(observatory: string, dataset: string, server: string = ""): JhvRequestBuilder {
+  AddSource(
+    observatory: string,
+    dataset: string,
+    server: string = "",
+  ): JhvRequestBuilder {
     this.sources.push({
       observatory: observatory,
       dataset: dataset,
-      server: server
+      server: server,
     });
     return this;
   }
