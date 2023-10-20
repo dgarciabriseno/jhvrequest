@@ -1,3 +1,4 @@
+[![npm version](https://badge.fury.io/js/jhvrequest.svg)](https://badge.fury.io/js/jhvrequest)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 # jhvrequest
@@ -19,7 +20,7 @@ import { JhvRequestBuilder } from "jhvrequest";
 
 // Load AIA 304 between 2023-01-1 and 2023-01-02 every hour.
 let requestBuilder = new JhvRequestBuilder();
-requestBuilder.SetTimeRange(new Date('2023-01-01'), new Date('2023-01-02'))
+requestBuilder.SetTimeRange('2023-01-01 00:00:00', '2023-01-02 00:00:00')
     .SetCadence(3600)
     .AddSource("SDO", "AIA 304")
     .Build().Send();
@@ -29,7 +30,7 @@ You can add multiple sources to the request:
 
 ```
 let requestBuilder = new JhvRequestBuilder();
-requestBuilder.SetTimeRange(new Date('2023-01-01'), new Date('2023-01-02'))
+requestBuilder.SetTimeRange('2023-01-01 00:00:00', '2023-01-02 00:00:00')
     .SetCadence(3600)
     .AddSource("SDO", "AIA 304")
     .AddSource("SOHO", "LASCO C2")
