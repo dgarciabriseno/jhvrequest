@@ -1,5 +1,35 @@
 {
   "dependencies": {
     "sampjs": "^1.0.2"
+  },
+  "name": "jhvrequest",
+  "description": "jhvrequest is a javascript package for sending SAMP requests to [JHelioviewer](https://www.jhelioviewer.org/)",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "tsc",
+    "test": "jest"
+  },
+  "keywords": [
+    "jhelioviewer",
+    "sampjs",
+    "jhv"
+  ],
+  "author": {
+    "name": "Daniel Garcia Briseno",
+    "email": "dgarciabriseno@sesda.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-typescript": "^7.23.2",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2",
+    "xmldom": "^0.6.0",
+    "xmlhttprequest": "^1.8.0"
   }
 }
