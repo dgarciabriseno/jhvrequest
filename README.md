@@ -49,12 +49,12 @@ See `test/jhvrequest.test.ts` as an example.
 
 ## JhvRequestBuilder
 
-| Method                          | Description                                                                              |
-| ------------------------------- | ---------------------------------------------------------------------------------------- |
-| SetTimeRange(start, end)        | Set the time range to query. Start and end are strings to remove ambiguity with js dates |
-| SetCadence(seconds)             | Set the time step to use between start and end. in seconds.                              |
-| AddSource(observatory, dataset) | Add an image layer to the request                                                        |
-| Build()                         | Construct a JhvRequest from the builder                                                  |
+| Method                                             | Description                                                                              |
+| -------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| SetTimeRange(start, end)                           | Set the time range to query. Start and end are strings to remove ambiguity with js dates |
+| SetCadence(seconds)                                | Set the time step to use between start and end. in seconds.                              |
+| AddSource(observatory, dataset, (Optional) server) | Add an image layer to the request.                                                       |
+| Build()                                            | Construct a JhvRequest from the builder                                                  |
 
 ## JhvRequest
 
