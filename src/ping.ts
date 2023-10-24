@@ -6,9 +6,13 @@ import { samp } from "sampjs";
  */
 function IsJhvRunning(): Promise<boolean> {
   return new Promise((resolve, reject) => {
-    samp.ping((result: boolean) => {
-      resolve(result);
-    });
+    try {
+      samp.ping((result: boolean) => {
+        resolve(result);
+      });
+    } catch (e) {
+      resolve(false);
+    }
   });
 }
 
