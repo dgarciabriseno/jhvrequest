@@ -41,7 +41,7 @@ class JhvRequest {
     };
 
     if (this.connector.connection) {
-      this.connector.notifyAll([this.message], null, registerAndSend);
+      this.connector.connection.notifyAll([this.message], null, registerAndSend);
     } else {
       await registerAndSend();
     }
