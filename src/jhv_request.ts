@@ -1,9 +1,12 @@
 import { samp } from "sampjs";
 
-const SampProfile = {
-  "samp.name": "jhvrequest",
-  "samp.description": "JavaScript library for sending requests to JHelioviewer",
-};
+function MakeSampProfile(name: string = "jhvrequest") {
+  return {
+    "samp.name": name,
+    "samp.description":
+      "JavaScript library for sending requests to JHelioviewer",
+  };
+}
 
 class JhvRequest {
   /**
@@ -13,14 +16,10 @@ class JhvRequest {
   private connector;
   private message: any;
 
-  constructor(json: Object) {
+  constructor(json: Object, appName: string = "jhvrequest") {
     this.json = json;
-    this.connector = new samp.Connector(
-      SampProfile["samp.name"],
-      SampProfile,
-      null,
-      null,
-    );
+    let profile = MakeSampProfile(appName);
+    this.connector = new samp.Connector(appName, profile, null, null);
   }
 
   async Send() {

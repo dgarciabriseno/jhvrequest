@@ -12,6 +12,7 @@ describe("Jhv Request", () => {
       .AddSource("SDO", "AIA 94")
       .SetCadence(3600)
       .SetTimeRange("2023-01-01 00:00:00", "2023-01-02 00:00:00")
+      .SetName("JHV Request Test Suite")
       .Build();
     await request.Send();
   });

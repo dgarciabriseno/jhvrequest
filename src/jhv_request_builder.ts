@@ -18,9 +18,21 @@ class JhvRequestBuilder {
   private range: DateRange | undefined = undefined;
   private sources: Datasource[];
   private cadence: number | undefined = undefined;
+  private name: string | undefined = undefined;
 
   constructor() {
     this.sources = [];
+  }
+
+  /**
+   * Optionally sets the application name.
+   * This is the name of the sender that appears when the request is sent to JHelioviewer.
+   * If not set, the sender will be "jhvrequest"
+   * @param {string} name Application name
+   */
+  SetName(name: string): JhvRequestBuilder {
+    this.name = name;
+    return this;
   }
 
   /**
@@ -94,7 +106,7 @@ class JhvRequestBuilder {
   }
 
   Build(RequestClass: typeof JhvRequest = JhvRequest): JhvRequest {
-    return new RequestClass(this._BuildJson());
+    return new RequestClass(this._BuildJson(), this.name);
   }
 }
 
