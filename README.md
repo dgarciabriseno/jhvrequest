@@ -76,12 +76,13 @@ let result = await IsJhvRunning();
 
 ## JhvRequestBuilder
 
-| Method                                             | Description                                                                              |
-| -------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| SetTimeRange(start, end)                           | Set the time range to query. Start and end are strings to remove ambiguity with js dates |
-| SetCadence(seconds)                                | Set the time step to use between start and end. in seconds.                              |
-| AddSource(observatory, dataset, (Optional) server) | Add an image layer to the request.                                                       |
-| Build()                                            | Construct a JhvRequest from the builder                                                  |
+| Method                                             | Description                                                                                  |
+| -------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| SetName(appName)                                   | Sets the application name. This is the name which appears in the JHelioviewer request popup. |
+| SetTimeRange(start, end)                           | Set the time range to query. Start and end are strings to remove ambiguity with js dates     |
+| SetCadence(seconds)                                | Set the time step to use between start and end. in seconds.                                  |
+| AddSource(observatory, dataset, (Optional) server) | Add an image layer to the request.                                                           |
+| Build()                                            | Construct a JhvRequest from the builder                                                      |
 
 ## JhvRequest
 
